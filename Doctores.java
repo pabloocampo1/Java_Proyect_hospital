@@ -6,22 +6,53 @@ public class Doctores {
     private String name;
     private int age;
     private String especialidad;
+    private static int id = 0;
     private String userName = "doctor";
     private String password = "123";
+
     //Scanner para obtener los datos
     private Scanner input;
 
+    // constructor
     public Doctores(String name, int age, String especialidad){
         this.name =name;
         this.age = age;
         this.especialidad = especialidad;
         this.input = new Scanner(System.in);
+        id++;
     };
 
+    // metodo para obtener el nombre y la edad
+    public String getName(){
+        return this.name;
+    }
+    public int getAge(){
+        return this.age;
+    }
+    public String getEspecialidad(){
+        return this.especialidad;
+    }
+
+    //metodo para cambiar los valores de los atributos
+
+    public void setName(String newName){
+        this.name = newName;
+    };
+
+    public void setAge(int newAge){
+        this.age = newAge;
+    };
+
+    public void setEspecialidad(String newEspecialidad){
+        this.especialidad = newEspecialidad;
+    };
+    
+    //metodo para obtener toda la informacion.
     public void getInfo(){
         System.out.println("Nombre: " + name);
         System.out.println("Edad: " + age);
         System.out.println("Especialidad: " + especialidad);
+        System.out.println("id: " + id);
     };
 
     //metodo para obligar al nuevo usuario a cambiar las credenciales
