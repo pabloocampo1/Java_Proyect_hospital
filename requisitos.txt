@@ -1,7 +1,7 @@
 Requisitos para el Proyecto de Gestión de Pacientes y Doctores
 Requisitos Funcionales
 
-Gestión de Doctores:
+solo las clases - Gestión de Doctores:
 
 Agregar Doctor: La aplicación debe permitir agregar nuevos doctores con atributos como nombre, edad, especialidad y ID único.
 Eliminar Doctor: La aplicación debe permitir eliminar doctores existentes utilizando su ID.

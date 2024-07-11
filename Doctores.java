@@ -7,6 +7,7 @@ public class Doctores {
     private int age;
     private String especialidad;
     private static int id = 0;
+    private String rol;
     private String userName = this.name;
     private String password = Integer.toString(id);
 
@@ -19,6 +20,7 @@ public class Doctores {
         this.age = age;
         this.especialidad = especialidad;
         this.input = new Scanner(System.in);
+        this.rol = "Medico";
         id++; // id unico para cada Doctor
     };
 
