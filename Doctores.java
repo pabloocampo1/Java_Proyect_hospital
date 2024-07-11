@@ -7,31 +7,33 @@ public class Doctores {
     private int age;
     private String especialidad;
     private static int id = 0;
-    private String userName = "doctor";
-    private String password = "123";
+    private String userName = this.name;
+    private String password = Integer.toString(id);
 
     //Scanner para obtener los datos
     private Scanner input;
 
     // constructor
-    public Doctores(String name, int age, String especialidad){
+    public Doctores(String name, int age, String especialidad, String userName){
         this.name =name;
         this.age = age;
         this.especialidad = especialidad;
         this.input = new Scanner(System.in);
-        id++;
+        id++; // id unico para cada Doctor
     };
 
     // metodo para obtener el nombre y la edad
     public String getName(){
         return this.name;
-    }
+    };
+
     public int getAge(){
         return this.age;
-    }
+    };
+
     public String getEspecialidad(){
         return this.especialidad;
-    }
+    };
 
     //metodo para cambiar los valores de los atributos
 
@@ -65,7 +67,7 @@ public class Doctores {
     public void cambiarCredenciales(){
         while (true) {
             try {
-                System.out.println("1. Cambiar nombre de usuario -- 2.Cambiar contraseña");
+                System.out.println("1. Cambiar nombre de usuario -- 2.Cambiar contraseña -- 3.cambiar nombre de usuario y contraseña -- 4. salir");
                 int opcion = input.nextInt();
 
                 switch (opcion) {
@@ -74,12 +76,24 @@ public class Doctores {
                         String newUserName = input.next();
                         this.userName = newUserName;
                         break;
-                        
+
                     case 2:
                         System.out.println("Ingrese la nueva contraseña.");
                         String newPassword = input.next();
                         this.password = newPassword;
                         System.out.println("Se edito la contraseña correctamente.");
+                        break;
+                    case 3:
+                        System.out.println("Ingrese su nuevo nombre.");
+                        String newUserName1 = input.next();
+                        this.userName = newUserName1;
+
+                        System.out.println("Ingrese la nueva contraseña.");
+                        String newPassword1 = input.next();
+                        this.password = newPassword1;
+                        System.out.println("Se edito la contraseña correctamente.");
+                        break;
+                    case 4:
                         break;
                     default:
                         System.out.println("Opcion incorrecta, intentalo nuevamente");
@@ -98,9 +112,9 @@ public class Doctores {
         };
     };
 
-    public static void main(String[] args) {
-        Doctores doctor = new Doctores("juan", 23, "medico general");
-        doctor.getInfo();
-        doctor.mensajeBienvenida();
-    }
-}
+    //metodo para listar todos los pacientes de cada doctor.
+
+    public void listarPacientes(){
+        //sin asignar
+    };
+};

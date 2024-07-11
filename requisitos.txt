@@ -16,6 +16,7 @@ Eliminar Paciente: La aplicación debe permitir eliminar pacientes existentes ut
 Actualizar Información del Paciente: La aplicación debe permitir actualizar la información de los pacientes.
 Listar Pacientes: La aplicación debe permitir listar todos los pacientes registrados.
 Buscar Paciente: La aplicación debe permitir buscar un paciente por su nombre o por el nombre del médico asignado.
+
 Asignación de Doctores a Pacientes:
 
 Asignar Doctor a Paciente: La aplicación debe permitir asignar un doctor a un paciente.
