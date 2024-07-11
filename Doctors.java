@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Doctores {
+public class Doctors {
     // creacion del constructos y atributos de los doctores
     private String name;
     private int age;
@@ -15,7 +15,7 @@ public class Doctores {
     private Scanner input;
 
     // constructor
-    public Doctores(String name, int age, String especialidad, String userName){
+    public Doctors(String name, int age, String especialidad, String userName){
         this.name =name;
         this.age = age;
         this.especialidad = especialidad;
@@ -60,13 +60,13 @@ public class Doctores {
     };
 
     //metodo para obligar al nuevo usuario a cambiar las credenciales
-    public void mensajeBienvenida(){
+    public void mensegeWelcome(){
         System.out.println("Bienvenido," + name + "debes de cambiar sus credenciales.");
-        cambiarCredenciales();
+        changeCredential();
     };
 
     //metodo para cambiar las credenciales del objecto doctor
-    public void cambiarCredenciales(){
+    public void changeCredential(){
         while (true) {
             try {
                 System.out.println("1. Cambiar nombre de usuario -- 2.Cambiar contraseña -- 3.cambiar nombre de usuario y contraseña -- 4. salir");
@@ -108,7 +108,7 @@ public class Doctores {
     };
 
     // Método para cerrar el Scanner
-    public void cerrarScanner() {
+    public void closeScanner() {
         if (input != null) {
             input.close();
         };
@@ -116,7 +116,7 @@ public class Doctores {
 
     //metodo para listar todos los pacientes de cada doctor.
 
-    public void listarPacientes(){
+    public void allPatients(){
         //sin asignar
     };
 };
