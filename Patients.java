@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Patients {
+class Patients extends Person {
     private ArrayList<Citas> historialMedico;
     private String name;
     private int age;
@@ -9,28 +9,24 @@ public class Patients {
 
     //constructor for patients
     public Patients(String name, int age, int identification){
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.identification =identification;
         this.historialMedico = new ArrayList<>();
         id++;
     }
-    //getter para los datos principales
-    public String getName(){
-        return this.name;
-    }
+    
+    @Override
+    public void showInfo(){
+        System.out.println("Nombre: "+ this.name);
+        System.out.println("Edad: "+ this.age);
+        System.out.println("Identificacion: "+ this.identification);
+    };
 
     public int getId(){
         return id;
     };
-    //setter para los datos
-    public void setName(String name){
-        this.name = name;
-    };
-
-    public void setAge(int age){
-        this.age = age;
-    };
+   
+    
 
     public void setIdentification(int identification){
         this.identification = identification;
