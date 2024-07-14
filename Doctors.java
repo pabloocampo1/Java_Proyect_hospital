@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 class Doctors extends Person {
     // creacion del constructos y atributos de los doctores
-    private String name;
-    private int age;
     private String specialty;
     private String rol;
     
@@ -22,8 +20,8 @@ class Doctors extends Person {
     // metodo abstracto de la clase Person
     @Override
     public void showInfo(){
-        System.out.println("Nombre: "+ this.name);
-        System.out.println("Edad: "+ this.age);
+        System.out.println("Nombre: "+ getName());
+        System.out.println("Edad: "+ getAge());
         System.out.println("Specialty: "+ this.specialty);
     };
 
@@ -34,20 +32,13 @@ class Doctors extends Person {
     public String getRol(){
         return this.rol;
     };
-    
+
     public String getSpecialty(){
         return this.specialty;
     };
 
     //metodo para cambiar los valores de los atributos
 
-    public void setName(String newName){
-        this.name = newName;
-    };
-
-    public void setAge(int newAge){
-        this.age = newAge;
-    };
 
     public void setSpecialty(String newspecialty){
         this.specialty = newspecialty;
@@ -56,7 +47,7 @@ class Doctors extends Person {
 
     //metodo para obligar al nuevo usuario a cambiar las credenciales
     public void mensegeWelcome(){
-        System.out.println("Bienvenido," + name + "debes de cambiar sus credenciales.");
+        System.out.println("Bienvenido," + getName() + "debes de cambiar sus credenciales.");
         changeCredential();
     };
 

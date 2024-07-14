@@ -9,7 +9,6 @@ class Administrador extends Person {
     private int age;
     private String userName;
     private String password;
-    private static int id = 233242;
     private Scanner input;
     
 
@@ -17,9 +16,6 @@ class Administrador extends Person {
     public Administrador(String name, int age){
         super(name, age);
         this.rol = "Admin";
-        this.userName = "Admin"+Integer.toString(id);
-        this.password = Integer.toString(id);
-        id++; // id unico para cada administrador
         this.input = new Scanner(System.in);
     };
 
@@ -56,6 +52,10 @@ class Administrador extends Person {
             String password = input.nextLine();
 
             for (Person user : listMergeAdmins) {
+                System.out.println(user.getPassword());
+            }
+
+            for (Doctors user : Listadoctores) {
                 if (user.getPassword().equals(password) && user.getUserName().equals(userName)) {
                     credencialesValid = true;
                     if(user.getRol().equals("Medico")){
@@ -74,13 +74,13 @@ class Administrador extends Person {
     };
 
 
-    public void menuDoctor(Person user){
-        user.changeCredential();
+    public void menuDoctor(Doctors user){
+        user.showInfo();
     };
 
 
     public void menuAdmin () {
-
+        System.out.println("jjjjjjj");
     };
 
 

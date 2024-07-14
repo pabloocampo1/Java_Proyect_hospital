@@ -27,6 +27,10 @@ public abstract class Person {
         return this.name;
     }
 
+    public int getId(){
+        return id;
+    }
+
     public int getAge(){
         return age;
     };

@@ -5,14 +5,15 @@ class Patients extends Person {
     private String name;
     private int age;
     private int identification;
-    private static int id = 100000;
+    private String rol;
+    
 
     //constructor for patients
     public Patients(String name, int age, int identification){
         super(name, age);
         this.identification =identification;
         this.historialMedico = new ArrayList<>();
-        id++;
+        this.rol = "Paciente";
     }
     
     @Override
@@ -21,10 +22,12 @@ class Patients extends Person {
         System.out.println("Edad: "+ this.age);
         System.out.println("Identificacion: "+ this.identification);
     };
-
-    public int getId(){
-        return id;
+    @Override
+    public String getRol(){
+        return this.rol;
     };
+
+    
    
     
 
