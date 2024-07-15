@@ -43,16 +43,7 @@ class Doctors extends Person {
     public void setSpecialty(String newspecialty){
         this.specialty = newspecialty;
     };
-
-
-    //metodo para obligar al nuevo usuario a cambiar las credenciales
-    public void mensegeWelcome(){
-        System.out.println("Bienvenido," + getName() + "debes de cambiar sus credenciales.");
-        changeCredential();
-    };
-
     
-
     // Método para cerrar el Scanner
     public void closeScanner() {
         if (input != null) {

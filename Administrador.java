@@ -10,6 +10,7 @@ class Administrador extends Person {
     private String userName;
     private String password;
     private Scanner input;
+    boolean stateLogIn = true;
     
 
     // Constructor
@@ -39,9 +40,10 @@ class Administrador extends Person {
     //simulacion de login para tener diferentes funcionalidades.
     public void logIn(){
 
-        boolean stateLogIn = true; //varibale para validar el estado del login
+        //varibale para validar el estado del login
         ArrayList<Person> listMergeAdmins = new ArrayList<>(listAdmin);
         listMergeAdmins.addAll(Listadoctores);
+
         
         while (stateLogIn) {
             boolean credencialesValid = false;
@@ -55,13 +57,15 @@ class Administrador extends Person {
                 System.out.println(user.getPassword());
             }
 
-            for (Doctors user : Listadoctores) {
+            for (Person user : listMergeAdmins) {
                 if (user.getPassword().equals(password) && user.getUserName().equals(userName)) {
                     credencialesValid = true;
-                    if(user.getRol().equals("Medico")){
-                        menuDoctor(user);
-                    }else if(user.getRol().equals("Admin")){
-                        menuAdmin();
+                    if(user instanceof Doctors){
+                        Doctors doctor = (Doctors) user;
+                        menuDoctor(doctor);
+                    }else if(user instanceof Administrador){
+                        Administrador administrador = (Administrador) user;
+                        menuAdmin(administrador);
                     }
                 }
             }
@@ -75,23 +79,22 @@ class Administrador extends Person {
 
 
     public void menuDoctor(Doctors user){
-        user.showInfo();
+        System.out.println("Bienvenido, "+ user.getName());;
+        
     };
 
 
-    public void menuAdmin () {
-        System.out.println("jjjjjjj");
+    public void menuAdmin (Administrador user) {
+        while (true) {
+            System.out.println(" 1. Agregar doctor\n 2. Editar datos del doctor\n 3. Eliminar doctor\n 4. Buscar Doctor\n 5. Ver todos los doctores\n 6. Agregar un paciente\n 7.");
+            break;
+        }
     };
 
 
     public static void main(String[] args) {
         Administrador admin = new Administrador("jaun", 23);
-        Doctors doctors1 = new Doctors("juan carlos", 22, "carnicero");
-        Doctors doctors2 = new Doctors("juan medina", 22, "perro");
-        admin.Listadoctores.add(doctors1);
-        admin.Listadoctores.add(doctors2);
-        admin.listAdmin.add(admin);
-        System.out.println(admin.x);
-        admin.logIn();
+        
+        admin.menuAdmin(admin);
     }
 };
