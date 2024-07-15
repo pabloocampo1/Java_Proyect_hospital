@@ -86,8 +86,18 @@ class Administrador extends Person {
 
     public void menuAdmin (Administrador user) {
         while (true) {
-            System.out.println("helooooooooooooo");
-            System.out.println(" 1. Agregar doctor\n 2. Editar datos del doctor\n 3. Eliminar doctor\n 4. Buscar Doctor\n 5. Ver todos los doctores\n 6. Agregar paciente");
+            System.out.println(" 1. Agregar doctor\n 2. Editar datos del doctor\n 3. Eliminar doctor\n 4. Buscar Doctor\n 5. Ver todos los doctores\n 6. Agregar un paciente\n 7.");
+            System.out.println("Elige la opciones que deseas");
+            int opcion = input.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("hello");
+                    break;
+            
+                default:
+                    break;
+            }
             break;
         }
     };
