@@ -11,8 +11,8 @@ class Doctors extends Person {
     private Scanner input;
 
     // constructor
-    public Doctors(String name, int age, String specialty){
-        super(name, age);
+    public Doctors(String name, int age,int identification, String specialty){
+        super(name, age, identification);
         this.specialty = specialty;
         this.input = new Scanner(System.in);
         this.rol = "Medico";
@@ -43,7 +43,7 @@ class Doctors extends Person {
     public void setSpecialty(String newspecialty){
         this.specialty = newspecialty;
     };
-    
+
     // Método para cerrar el Scanner
     public void closeScanner() {
         if (input != null) {

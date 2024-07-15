@@ -10,8 +10,7 @@ class Patients extends Person {
 
     //constructor for patients
     public Patients(String name, int age, int identification){
-        super(name, age);
-        this.identification =identification;
+        super(name, age, identification);
         this.historialMedico = new ArrayList<>();
         this.rol = "Paciente";
     }
@@ -26,15 +25,6 @@ class Patients extends Person {
     public String getRol(){
         return this.rol;
     };
-
-    
-   
-    
-
-    public void setIdentification(int identification){
-        this.identification = identification;
-    };
-
     public void HisoryAppointments(){
         System.out.println("show clinical history");
     }

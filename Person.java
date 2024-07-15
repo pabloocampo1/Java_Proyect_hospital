@@ -6,6 +6,7 @@ public abstract class Person {
     int x = 2;
     private String name;
     private int age;
+    private int identification;
     private String userName;
     private String password;
     private String rol;
@@ -13,9 +14,10 @@ public abstract class Person {
     private Scanner input;
     
 
-    public Person(String name, int age){
+    public Person(String name, int age, int identification){
         this.name = name;
         this.age = age;
+        this.identification = identification;
         input = new Scanner(System.in);
         userName = this.name;
         password = Integer.toString(id);
@@ -32,8 +34,12 @@ public abstract class Person {
     }
 
     public int getAge(){
-        return age;
+        return this.age;
     };
+
+    public int getIdentification() {
+        return this.identification;
+    }
 
     public abstract String getRol();
 
