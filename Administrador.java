@@ -35,6 +35,22 @@ class Administrador extends Person {
 
     //simulacion de login para tener diferentes funcionalidades.
     
+    public void addDoctor(){
+        System.out.println("Nombre: ");
+        String name = input.nextLine();
 
+        int age = Untils.ageValid(input);
+        input.nextLine();
+
+        Doctors doctor = new Doctors(name, age , 22382, "especial");
+        managementHospital.Listadoctores.add(doctor);
+        
+    }
+
+    public void AllDoctor(){
+        for (Doctors doctor : managementHospital.Listadoctores) {
+            doctor.showInfo();
+        }
+    }
 
 };
