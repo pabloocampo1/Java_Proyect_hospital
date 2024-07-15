@@ -96,5 +96,5 @@ class Administrador extends Person {
         Administrador admin = new Administrador("jaun", 23);
         
         admin.menuAdmin(admin);
-    }
+    };
 };
