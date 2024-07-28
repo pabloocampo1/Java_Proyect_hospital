@@ -13,7 +13,7 @@ class Patients extends Person {
         super(name, age, identification);
         this.historialMedico = new ArrayList<>();
         this.rol = "Paciente";
-    }
+    };
     
     @Override
     public void showInfo(){

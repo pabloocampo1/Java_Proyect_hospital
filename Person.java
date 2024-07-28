@@ -103,6 +103,9 @@ public abstract class Person {
             };
         }
     };
+
+    // Menu for change information person
+
     public void closeScanner() {
         if (input != null) {
             input.close();

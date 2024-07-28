@@ -27,6 +27,7 @@ public class managementHospital {
             System.out.println("Ingrese su contraseña: ");
             String password = input.nextLine();
 
+
             for (Person user : listMergeAdmins) {
                 if (user.getPassword().equals(password) && user.getUserName().equals(userName)) {
                     credencialesValid = true;
@@ -59,6 +60,7 @@ public class managementHospital {
     public void menuAdmin (Administrador user) {
         boolean isMenuActive = true;
         while (isMenuActive) {
+            System.out.println("__________Bienvenido al menu principal_____");
             System.out.println(" 1. Gestion de Doctores\n 2. Gestion de pacientes\n 3. gestion de citas\n 4. Cerrar sesion");
             try {
                 System.out.println("Elige una opcion: ");
@@ -95,23 +97,28 @@ public class managementHospital {
     public void doctorsManagement(Administrador user) {
         boolean isMenuActiveDoctor = true;
         while (isMenuActiveDoctor) {
-            System.out.println("____________-Menu - Doctors Management____________");
+            System.out.println("____________Menu Doctors Management____________");
             System.out.println(" 1. Agregar doctores\n 2.Editar datos\n 3. Eliminar doctor\n 4. Buscar doctor\n 5. Listar todos los doctores\n 6. salir al menu");
             int option = input.nextInt();
 
             switch (option) {
                 case 1:
                     user.addDoctor();
+                    System.out.println("agregado correctamente");
+                    break;
+                case 2:
+                    user.editDoctor();
                     break;
                 case 5:
                     user.AllDoctor();
                     break;
                 case 6:
                     isMenuActiveDoctor = false;
+
                     break;
             
                 default:
-                    System.out.println("Opcion no validad");
+                    System.out.println("Opcion no valida");
                     break;
             }
         }
